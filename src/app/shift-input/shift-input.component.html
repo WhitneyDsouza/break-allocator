@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Shift Scheduler</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let shift of shifts; let i = index" class="form-group">
+      <label for="employee{{i}}">Employee {{i + 1}}</label>
+      <input id="employee{{i}}" [(ngModel)]="shift.name" name="employee{{i}}" placeholder="Employee Name" required>
+      <input type="time" [(ngModel)]="shift.startTime" name="startTime{{i}}" required>
+      <input type="time" [(ngModel)]="shift.endTime" name="endTime{{i}}" required>
+    </div>
+    <button type="button" (click)="addShift()">Add Shift</button>
+    <button type="submit" [disabled]="!shifts.length">Schedule Breaks</button>
+  </form>
+
+  <app-schedule-display *ngIf="schedule.length" [schedule]="schedule"></app-schedule-display>
+</div>

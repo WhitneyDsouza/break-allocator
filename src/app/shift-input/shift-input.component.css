@@ -1,0 +1,15 @@
+/* shift-input.component.css */
+
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+button {
+  align-self: flex-start;
+}

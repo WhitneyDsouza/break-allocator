@@ -1,0 +1,11 @@
+<div class="schedule-display">
+  <h2>Scheduled Breaks</h2>
+  <div *ngFor="let employeeBreaks of getGroupedBreaks()">
+    <p>
+      {{ employeeBreaks.name }}: 
+      <span *ngFor="let breakTime of employeeBreaks.breaks; let isLast = last">
+        {{ breakTime.breakStart }} - {{ breakTime.breakEnd }}<span *ngIf="!isLast">, </span>
+      </span>
+    </p>
+  </div>
+</div>
